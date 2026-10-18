@@ -37,7 +37,6 @@ if [[ ! -d "tables_MNC" ]]; then
     echo "Error: Directory 'tables_MNC' does not exist." >&2
     exit 1
 fi
-echo "Copying files"
 find "tables_MNC" -type f -print0 | while IFS= read -r -d '' file; do
     filename=$(basename "$file")
     case "$filename" in

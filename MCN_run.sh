@@ -161,6 +161,6 @@ done
 python3 evalAll.py Main_${p}
 python3 summary.py Main_${p}
 
-python3 performance_styled.py Main_${p} solver_updated.txt ${test_name}
+python3 performance_styled.py Main_${p} solver_updated.txt --methods ${test_name}
 
 cp Tests/Main_${p}/eval/summary_solved.csv .

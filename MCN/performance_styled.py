@@ -180,6 +180,7 @@ def main():
     args = parser.parse_args()
 
     folder = Path("Tests") / args.testname / "eval"
+    folder_home = Path(".") / args.testname / "eval"
 
     if not folder.is_dir():
         raise ValueError(f"Folder does not exist: {folder}")
@@ -362,7 +363,7 @@ def main():
         # Save as vector PDF/SVG/EPS unless PNG is requested
         # --------------------------------------------------
 
-        output_file = folder / f"performance_profile_{method}.{args.output_format}"
+        output_file = folder_home / f"performance_profile_{method}.{args.output_format}"
 
         plt.savefig(
             output_file,

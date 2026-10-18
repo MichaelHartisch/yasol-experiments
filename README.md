@@ -4,7 +4,7 @@ This repository provides scripts to reproduce the computational study in our pap
 
 For full reproduction, use `probability=1`, `timelimit=1800`, and all specified solvers (preferably in the same versions). Reducing `probability` to some value within [0,1] reduces the number of used instances in the test by randomly choosing a subset of instances (selecting an instance with the specified probability). This is useful for quicker testing but may not reproduce the published numerical results excactly.
 
-## Third-party software
+### Third-party software
 
 This repository includes copies of GNU Parallel by Ole Tange and the Free Software Foundation, used to execute solver instances in parallel. GNU Parallel is distributed under the GNU General Public License. Its copyright notices and license terms are retained.
 ## 1. Install Yasol
@@ -25,7 +25,7 @@ These installations are only necessary for experiments that include the respecti
 
 ### 2.1 EQuIPS
 
-EQuIPS requires an installed and licensed Gurobi version. Then run:
+EQuIPS requires an installed and licensed Gurobi version. If Gurobi is installed, the following script should automatically detect Gurobi and install EQuIPS
 
 ```bash
 ./setupEQuIPS.sh
