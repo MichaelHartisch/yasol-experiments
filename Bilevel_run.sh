@@ -167,4 +167,4 @@ done
 python3 evalAll.py Main_${p}
 python3 summary.py Main_${p}
 
-python3 makePlot_updated.py Tests/Main_${p}/eval/ solver_updated.txt --output $(pwd)/cactus_plot.pdf
+python3 makePlot_updated.py Tests/Main_${p}/eval/ solver_updated.txt --output $(pwd)/cactus_plot.pdf --time-limit $timelimit
