@@ -96,7 +96,7 @@ for solver in "${solvers[@]}"; do
     fi
 done
 
-    if [[ "$oneYasol" == false ]]; then
+    if [[ "$OneYasol" == false ]]; then
          "Either Yasol_LA or Yasol_FA should be tested."
          exit 1
     fi
