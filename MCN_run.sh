@@ -88,6 +88,14 @@ for solver in "${solvers[@]}"; do
             valid=true
             break
         fi
+        if [[ "$solver" == "EQuIPS" ]]; then
+            if [[ ! -d "EQuIPS" ]]; then
+                valid=false
+                echo "Error: '$solver' not installed."
+        exit 1
+                break
+            fi
+        fi
     done
 
     if [[ "$valid" == false ]]; then
@@ -113,7 +121,7 @@ for solver in "${solvers[@]}"; do
 case "$solver" in
         Yasol_DD)
             auxfile_Y_DD="ParallelRunsYasol_DD_Main_${p}_${test_name}.txt"
-	    rm -f $auxfile_Y_DD
+        rm -f $auxfile_Y_DD
             ./StartYasolTest.sh Main_${p} DD $timelimit ${MainFolder}/Yasol/build/yasol "--isSimplyRestricted=1" ${p} ${test_name} ${auxfile_Y_DD}
             cat $auxfile_Y_DD >> $StarterFile
             ;;
