@@ -79,10 +79,16 @@ NEED_MIP=0
 
 if contains_solver "Yasol" "${SOLVERS[@]}" || contains_solver "EQuIPS" "${SOLVERS[@]}"; then
     NEED_QLP=1
-    rm -r "instances/QLP"
+    rm -r "instances/QLP" 2>/dev/null
     mkdir -p "instances/QLP"
 fi
 
+if contains_solver "EQuIPS" "${SOLVERS[@]}"; then
+    if [[ ! -d "EQuIPS" ]]; then
+        echo "Error: 'EQuIPS not installed."
+        exit 1        
+    fi
+fi
 if contains_solver "CPLEX" "${SOLVERS[@]}"; then
     NEED_MIP=1
     rm -r "instances/RC"
