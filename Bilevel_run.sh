@@ -60,6 +60,7 @@ if ! awk -v p="$p" 'BEGIN {
 fi
 
 # Validate solver names
+OneYasol=false
 for solver in "${solvers[@]}"; do
 
     valid=false
@@ -72,6 +73,12 @@ for solver in "${solvers[@]}"; do
                 exit 1
                 break
             fi
+        fi
+        if [[ "$solver" == "Yasol_LA" ]]; then
+            OneYasol=true
+        fi
+        if [[ "$solver" == "Yasol_FA" ]]; then
+            OneYasol=true
         fi
         if [[ "$solver" == "$available" ]]; then
             valid=true
@@ -88,6 +95,11 @@ for solver in "${solvers[@]}"; do
         error "Unknown solver '$solver'."
     fi
 done
+
+    if [[ "$oneYasol" == false ]]; then
+         "Either Yasol_LA or Yasol_FA should be tested."
+         exit 1
+    fi
 
 # All arguments are valid
 echo "Experiment configuration:"

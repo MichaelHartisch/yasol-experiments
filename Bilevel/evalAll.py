@@ -28,7 +28,12 @@ folder = Path("Tests/"+testname+"/eval")
 if not folder.is_dir():
     parser.error(f"Folder does not exist: {folder}")
 
-path_m = Path("Tests/"+testname+"/Yasol_FA")
+base_path = Path("Tests") / testname
+
+path_m = next(
+    (p for p in [base_path / "Yasol_FA", base_path / "Yasol_LA"] if p.is_dir()),
+    None
+)
 path= Path(str(path_m))
 for item in path.iterdir():
     method=item.name
