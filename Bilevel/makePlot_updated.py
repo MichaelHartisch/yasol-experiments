@@ -472,9 +472,10 @@ def main():
             )
         except RuntimeError as e:
             print(
-                f"ERROR: {e}",
+                f"Info: {e}",
                 file=sys.stderr,
             )
+            continue
             return 1
 
         solver_data.append(

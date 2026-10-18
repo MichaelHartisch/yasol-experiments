@@ -65,6 +65,14 @@ for solver in "${solvers[@]}"; do
     valid=false
 
     for available in "${AVAILABLE_SOLVERS[@]}"; do
+        if [[ "$solver" == "EQuIPS" ]]; then
+            if [[ ! -d "EQuIPS" ]]; then
+                valid=false
+                echo "Error: '$solver' not installed."
+                exit 1
+                break
+            fi
+        fi
         if [[ "$solver" == "$available" ]]; then
             valid=true
             if [[ "$solver" == "MibS" ]]; then
