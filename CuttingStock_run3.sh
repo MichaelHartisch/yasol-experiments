@@ -38,8 +38,7 @@ echo "Threads: $THREADS"
 echo "Timelimit: $TIMELIMIT"
 
 cd CuttingStock
-#cd MultistageRobustCuttingStockProblem
-cd MultistageCuttingStockProblem
+cd MultistageRobustCuttingStockProblem
 
 
 OS="$(uname -s)"
@@ -168,7 +167,7 @@ fi
 echo "Selected raw files: $total"
 echo
 testname="CuttingStock_type3_${PROBABILITY}_${TIMELIMIT}"
-BUILD_DIR="MultistageCuttingStockProblem/build"
+BUILD_DIR="MultistageRobustCuttingStockProblem/build"
 
 LOG_DIR_YASOL=Tests/${testname}/Yasol_QIP
 mkdir -p $LOG_DIR_YASOL
