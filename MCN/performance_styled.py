@@ -180,7 +180,7 @@ def main():
     args = parser.parse_args()
 
     folder = Path("Tests") / args.testname / "eval"
-    folder_home = Path(".") / args.testname / "eval"
+    folder_home = Path(".")
 
     if not folder.is_dir():
         raise ValueError(f"Folder does not exist: {folder}")
