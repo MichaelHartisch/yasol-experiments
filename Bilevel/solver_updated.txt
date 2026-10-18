@@ -1,0 +1,6 @@
+# CSV prefix;label shown in figure
+Yasol_LA;Yasol (LA);#0072B2;-;o
+Yasol_FA;Yasol (FA);#56B4E9;--;o
+EQuIPS;EQuIPS (LA);#E69F00;-.;^
+MibS;MibS;#CC79A7;:;D
+

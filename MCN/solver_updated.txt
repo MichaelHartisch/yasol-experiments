@@ -1,0 +1,5 @@
+# CSV prefix;label shown in figure
+Yasol_Poly;Yasol$_{B}$;#0072B2;-
+Yasol_DD;Yasol$_{DD}$;#56B4E9;--
+EQUIPS;EQuIPS;#E69F00;-.
+MCN;MCN;#D55E00;:
